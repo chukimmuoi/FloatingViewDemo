@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_floating_height_108">108dp</dimen>
+    <dimen name="layout_floating_width_icon_108">108dp</dimen>
+</resources>

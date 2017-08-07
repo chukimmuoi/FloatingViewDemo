@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mCollapsedView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/mCollapsedImgAccount"
+        android:layout_width="@dimen/layout_floating_width_icon_108"
+        android:layout_height="@dimen/layout_floating_height_108"
+        android:src="@drawable/ic_account_circle_black_24dp"/>
+
+    <ImageView
+        android:id="@+id/mCollapsedImgClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close_black_24dp"
+        android:layout_alignRight="@+id/mCollapsedImgAccount"
+        android:layout_alignEnd="@+id/mCollapsedImgAccount" />
+</RelativeLayout>

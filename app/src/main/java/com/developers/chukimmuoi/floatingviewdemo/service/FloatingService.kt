@@ -38,7 +38,11 @@ import kotlinx.android.synthetic.main.item_expanded.view.*
  *
  * Stop service: call stopShell() or stopService()
  *
- * 2 loại Service: Local Service & Remote Service*/
+ * 2 loại Service: Local Service & Remote Service
+ *
+ *
+ * @see https://www.androidhive.info/2016/11/android-floating-widget-like-facebook-chat-head/
+ * */
 
 class FloatingService : Service() {
 
@@ -81,20 +85,24 @@ class FloatingService : Service() {
         mFloatingView.setOnTouchListener(object : View.OnTouchListener {
             private var initialX: Int = 0
             private var initialY: Int = 0
+
             private var initialTouchX: Float = 0.toFloat()
             private var initialTouchY: Float = 0.toFloat()
 
             override fun onTouch(view: View, event: MotionEvent): Boolean {
                 when (event.action) {
                     MotionEvent.ACTION_DOWN -> {
+                        // TODO: Lay vi tri ban dau.
                         initialX = params.x
                         initialY = params.y
 
+                        // TODO: Lay vi tri cam ung.
                         initialTouchX = event.rawX
                         initialTouchY = event.rawY
 
                         return true
                     }
+                    // TODO: OnClick
                     MotionEvent.ACTION_UP -> {
                         val XDiff = (event.rawX - initialTouchX).toInt()
                         val YDiff = (event.rawY - initialTouchY).toInt()
@@ -109,9 +117,11 @@ class FloatingService : Service() {
                         return true
                     }
                     MotionEvent.ACTION_MOVE -> {
+                        // TODO: Tinh lai toa do.
                         params.x = initialX + (event.rawX - initialTouchX).toInt()
                         params.y = initialY + (event.rawY - initialTouchY).toInt()
 
+                        // TODO: Thiet lap lai vi tri.
                         mWindowManager.updateViewLayout(mFloatingView, params)
 
                         return true
